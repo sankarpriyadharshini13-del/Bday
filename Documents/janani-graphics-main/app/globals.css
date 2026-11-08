@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Design tokens. Components should use these (directly or via the Tailwind
+  colour names mapped in tailwind.config.js) instead of hard-coded hex values.
+*/
+:root {
+  --color-primary: #C94658;
+  --color-primary-hover: #B33C4D;
+  --color-navy: #27394B;
+  --color-ivory: #F8F5F0;
+  --color-surface: #FFFFFF;
+  --color-text-secondary: #596B78;
+  --color-border: #E2E5E8;
+  --color-border-strong: #C9D0D6;
+  --color-primary-soft: #FBEDEF;
+  --color-peach: #F3C18A;
+
+  --shadow-sm: 0 1px 2px rgba(39, 57, 75, 0.06);
+  --shadow-md: 0 4px 14px rgba(39, 57, 75, 0.08);
+
+  --background: var(--color-surface);
+  --foreground: var(--color-navy);
+
+  /* The site is a light theme only; do not follow the OS dark mode. */
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    /* Matches the fixed 5rem navbar so native #hash links are not hidden under it. */
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-geist-sans), system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-navy);
+    line-height: 1.2;
+  }
+
+  :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+  }
+
+  .btn-secondary {
+    background-color: var(--color-surface);
+    border-color: var(--color-border-strong);
+    color: var(--color-navy);
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background-color: var(--color-ivory);
+    border-color: var(--color-navy);
+  }
+
+  /* Inverted button for use on navy panels */
+  .btn-light {
+    background-color: var(--color-surface);
+    border-color: var(--color-surface);
+    color: var(--color-navy);
+  }
+
+  .btn-light:hover:not(:disabled) {
+    background-color: var(--color-ivory);
+    border-color: var(--color-ivory);
+  }
+
+  /* Surfaces */
+  .card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .card-hover {
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .card-hover:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-border-strong);
+  }
+
+  /* Small labels */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.375rem 0.875rem;
+    border-radius: 9999px;
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary-hover);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 9999px;
+    background-color: var(--color-surface);
+    color: var(--color-navy);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+  }
+
+  /* Outline icon on a soft tile */
+  .icon-tile {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.625rem;
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary);
+  }
+
+  /* Section typography */
+  .section-title {
+    font-size: clamp(1.875rem, 1.45rem + 1.7vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+  }
+
+  .section-lead {
+    max-width: 48rem;
+    margin-inline: auto;
+    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+
+  @media (min-width: 768px) {
+    .section-lead {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Form fields */
+  .field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border-strong);
+    border-radius: 0.5rem;
+    background-color: var(--color-surface);
+    color: var(--color-navy);
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .field::placeholder {
+    color: var(--color-text-secondary);
+    opacity: 0.8;
+  }
+
+  .field:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(201, 70, 88, 0.2);
+  }
+}
+
+/* Keep motion functional only for people who ask for less of it. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

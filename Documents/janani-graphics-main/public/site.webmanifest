@@ -1,0 +1,65 @@
+{
+  "name": "Janani Labels - Polycarbonate Stickers Chennai",
+  "short_name": "Janani Labels",
+  "description": "Leading manufacturer of polycarbonate stickers in Chennai with 18+ years experience. ISO certified supplier of industrial labels, polyester stickers, and vinyl labels.",
+  "start_url": "https://jananilabels.in/",
+  "display": "standalone",
+  "scope": "https://jananilabels.in/",
+  "theme_color": "#FF6B6B",
+  "background_color": "#FFF4E6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["business", "manufacturing"],
+  "screenshots": [
+    {
+      "src": "/brandbird-1.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    },
+    {
+      "src": "/brandbird-2.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Request Quote",
+      "short_name": "Quote",
+      "description": "Request a quote for polycarbonate stickers",
+      "url": "https://jananilabels.in/#contact",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+# robots.txt for Janani Labels - Polycarbonate Stickers Chennai
+# https://jananilabels.in
+
+# Global Rules - Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow admin and system areas (if applicable)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow all product images
+Allow: /brandbird-1.png
+Allow: /brandbird-2.png
+Allow: /brandbird-3.png
+Allow: /brandbird-4.png
+Allow: /brandbird-5.png
+Allow: /brandbird-6.png
+Allow: /brandbird-7.png
+Allow: /brandbird-8.png
+Allow: /brandbird-9.png
+Allow: /brandbird-10.png
+Allow: /brandbird-11.png
+Allow: /brandbird-12.png
+
+# Allow CSS and JS files
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+
+# Sitemap location
+Sitemap: https://jananilabels.in/sitemap.xml
+
+# Specific rules for major search engines
+
+# Google - No delay for fast indexing
+User-agent: Googlebot
+Allow: /
+
+# Google Images - Important for product visibility
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Block known scraping/spam bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
